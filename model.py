@@ -52,7 +52,7 @@ class TodoItems():
         self.items.append(TodoItem(name, description, is_done))
 
     def get_item(self, index):
-        
+
         return self.items[index]
 
     def remove_item(self, index):
@@ -62,17 +62,28 @@ class TodoItems():
     def __str__(self):
 
         to_do_list = ''
+        counter = 0
 
         for item in self.items:
 
-            to_do_list += item.__str__() + '\n'
+            to_do_list += str(counter)
+
+            if item.is_done == True:
+                to_do_list += ' [x] '
+
+            elif item.is_done == False:
+                to_do_list += ' [ ] '
+
+            to_do_list += item.name + '\n'
+
+            counter += 1
 
         return to_do_list
 
 
-itemslist = TodoItems()
-itemslist.add_item("pranie1", "dwa")
-itemslist.add_item("pranie2", "trzy", True)
-print(itemslist)
-itemslist.get_item(0).change_name("dupa")
-print(itemslist)
+# itemslist = TodoItems()
+# itemslist.add_item("pranie1", "dwa")
+# itemslist.add_item("pranie2", "trzy", True)
+# print(itemslist)
+# itemslist.get_item(0).change_name("dupa")
+# print(itemslist)
