@@ -40,7 +40,59 @@ def main():
             index = check_if_index_is_good(item_position, itemslist)
 
             itemslist.get_item(index).mark()
-            
+
+        elif option == "2":
+
+            view.print_items_list(itemslist)
+
+            item_position = input("Which position you want to mark ?: ")
+
+            if check_if_index_is_good(item_position, itemslist) is True:
+                view.print_wrong_index()
+                continue
+
+            index = check_if_index_is_good(item_position, itemslist)
+
+            itemslist.get_item(index).unmark()
+
+        elif option == "3":
+
+            view.print_items_list(itemslist)
+
+        elif option == "4":
+
+            view.print_items_list(itemslist)
+
+            item_position = input("Which position you want to delete?: ")
+
+            if check_if_index_is_good(item_position, itemslist) is True:
+                view.print_wrong_index()
+                continue
+
+            index = check_if_index_is_good(item_position, itemslist)
+
+            itemslist.remove_item(index)
+
+        elif option == "5":
+
+            view.print_items_list(itemslist)
+
+            item_position = input("Which position you want to change name: ")
+
+            if check_if_index_is_good(item_position, itemslist) is True:
+                view.print_wrong_index()
+                continue
+
+            index = check_if_index_is_good(item_position, itemslist)
+
+            new_name = input("Enter new name: ")
+
+            if check_if_name_too_long(new_name):
+                view.print_name_too_long()
+                continue
+
+            itemslist.get_item(index).change_name(new_name)
+
 def check_if_name_too_long(name):
 
     if len(name) > 20:

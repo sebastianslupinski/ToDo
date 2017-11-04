@@ -9,7 +9,7 @@ def print_program_menu():
 
     menu_commands = ("Add item", "Mark item", "Unmark item", 
                 "Show all items", "Remove item",
-                "Change item name", "Change item description", "Exit")
+                "Change item name", "Change item description", "Show exact item details", "Exit")
 
     for option in menu_commands:
         print(str(menu_commands.index(option)) + "----->" + option)
