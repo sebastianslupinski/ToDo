@@ -25,5 +25,29 @@ class TodoItem():
 
         return info
 
+class TodoItems():
+
+    def __init__(self):
+
+        self.items = []
+
+    def add_item(self, name, description, is_done = False):
+
+        #if type(deadline) is not datetime:
+            #raise ValueError
+
+        self.items.append(TodoItem(name, description, is_done))
+
+    def __str__(self):
+
+        to_do_list = ''
+
+        for item in items:
+
+            to_do_list += item.__str__() + '\n'
+
+        return to_do_list
+
+
 # item1 = TodoItem("pranie", "dzisiaj o 5 pranie", False)
 # print(item1)
