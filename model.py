@@ -38,16 +38,14 @@ class TodoItem():
 
         return info
 
+
 class TodoItems():
 
     def __init__(self):
 
         self.items = []
 
-    def add_item(self, name, description, is_done = False):
-
-        #if type(deadline) is not datetime:
-            #raise ValueError
+    def add_item(self, name, description, is_done=False):
 
         self.items.append(TodoItem(name, description, is_done))
 
@@ -79,11 +77,3 @@ class TodoItems():
             counter += 1
 
         return to_do_list
-
-
-# itemslist = TodoItems()
-# itemslist.add_item("pranie1", "dwa")
-# itemslist.add_item("pranie2", "trzy", True)
-# print(itemslist)
-# itemslist.get_item(0).change_name("dupa")
-# print(itemslist)

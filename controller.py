@@ -93,6 +93,45 @@ def main():
 
             itemslist.get_item(index).change_name(new_name)
 
+        elif option == "6":
+
+            view.print_items_list(itemslist)
+
+            item_position = input("Which position you want to change description: ")
+
+            if check_if_index_is_good(item_position, itemslist) is True:
+                view.print_wrong_index()
+                continue
+
+            index = check_if_index_is_good(item_position, itemslist)
+
+            new_name = input("Enter new description: ")
+
+            if check_if_name_too_long(new_name):
+                view.print_name_too_long()
+                continue
+
+            itemslist.get_item(index).change_name(new_name)
+
+        elif option == "7":
+
+            view.print_items_list(itemslist)
+
+            item_position = input("Which position you want to see exactly: ")
+
+            if check_if_index_is_good(item_position, itemslist) is True:
+                view.print_wrong_index()
+                continue
+
+            index = check_if_index_is_good(item_position, itemslist)
+
+            view.print_item(itemslist.get_item(index).__str__())
+
+        elif option == "8":
+
+            exit()
+
+
 def check_if_name_too_long(name):
 
     if len(name) > 20:
@@ -100,12 +139,14 @@ def check_if_name_too_long(name):
     else:
         return False
 
+
 def check_if_descr_too_long(desc):
 
-    if len(desc) > 50:
+    if len(desc) > 150:
         return True
     else:
         return False
+
 
 def check_if_index_is_good(index, itemslist):
 
