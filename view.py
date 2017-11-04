@@ -14,11 +14,23 @@ def print_program_menu():
     for option in menu_commands:
         print(str(menu_commands.index(option)) + "----->" + option)
 
-def print_items_list(items):
+def print_items_list(TodoItems):
 
-    print(items)
+    print(TodoItems)
 
 def print_item(item):
 
     print(item)
+
+def print_name_too_long():
+
+    print("Name too long !")
+
+def print_description_too_long():
+
+    print("Description too long !")
+
+def print_wrong_index():
+
+    print("Wrong index !")
 
