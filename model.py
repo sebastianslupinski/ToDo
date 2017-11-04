@@ -71,8 +71,8 @@ class TodoItems():
 
 
 itemslist = TodoItems()
-itemslist.add_item("pranie", "chujuchuju")
-itemslist.add_item("pranie2", "chuju", True)
+itemslist.add_item("pranie1", "dwa")
+itemslist.add_item("pranie2", "trzy", True)
 print(itemslist)
-itemslist.get_item(0).change_name("chuju idź")
+itemslist.get_item(0).change_name("dupa")
 print(itemslist)
